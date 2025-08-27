@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(24, 1, 24);
+}
+.Container{
+    display: flex;
+    float: left;
+}
+.ludo{
+    height: 750px;
+    width: 750px;
+    margin: auto;
+    position: relative;
+    border: 1px solid black;
+    display: grid;
+    border-radius: 100px;
+    /* overflow: hidden; */
+    grid-template-rows: repeat(15, 1fr);
+    grid-template-columns: repeat(15, 1fr);
+}
+.ludo-blocks{
+    
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    
+    /* box-sizing: border-box; */
+    /* border-radius: 50px; */
+}
+#div1{
+    background-color: white;
+    border: 40px solid red;
+    grid-column: 1/span 6;
+    grid-row: 1/span 6;
+    display: flex;
+     justify-content: center;
+     align-items: center;
+}
+#div2{
+    background-color: white;
+    border: 40px solid royalblue;
+    grid-column: 10/span 6;
+    grid-row: 1/span 6;
+    display: flex;
+     justify-content: center; 
+     align-items: center;
+}
+#div3{
+    background-color: white;
+        border: 40px solid rgb(249, 249, 81);
+    grid-column: 1/span 6;
+    grid-row: 10/span 6;
+    display: flex;
+    
+        justify-content: center;
+        align-items: center;
+}
+#div4{
+    background-color: white;
+        border: 40px solid green;
+    grid-column: 10/span 6;
+    grid-row: 10/span 6;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+#div5{
+    background-color: white;
+    grid-column: 7/span 3;
+    grid-row: 7/ span 3;
+    display: flex;
+    justify-content: center;
+    font-style: normal;
+    font-size: 40px;
+    align-items: center;
+}
+
+.safe {
+    position: relative
+}
+
+.safe::after {
+    content: "★";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    opacity: .85
+}
+
+/**************colors***********/
+.red{
+    background-color: red;
+    color: white;
+}
+.blue{
+    background-color: royalblue;
+    color: white;
+}
+
+.yellow{
+    background-color:rgb(249, 249, 81);
+    color: white;
+}
+.green{
+    background-color: green;
+    color: white;
+}
+
+.border {
+    border: 3px dashed black;
+}
+
+/* .border_blue {
+    border: 3px dashed royalblue;
+}
+
+.border_yellow {
+    border: 3px dashed rgb(249, 249, 81);
+}
+
+.border_green {
+    border: 3px dashed green;
+} */
+/************design************/
+.pads{
+    position: relative;
+    grid-template-columns: repeat(2,1fr);
+    gap: 60px;
+    display: grid;
+    /* padding: 114px; */
+    justify-content: space-around;
+}
+.pad {
+    height: 40px;
+    width: 40px;
+    color: white;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+    border-radius: 50px;
+    transition: all .3;
+}
+.pad.highlight{
+    cursor: pointer;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg) scale(1.4);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.dice-value{
+    font-size: 16px;
+    font-weight: bold;
+    background-color: black;
+        padding: 14px;
+        border: 1px solid white;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        position: absolute;
+        left: 85%;
+        top: 50%;
+}
+#dice{
+    background-color: green;
+    padding: 14px;
+    border: 1px solid white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    left: 80%;
+    top: 50%;
+}
+#reset{
+    background-color: black;
+    /* height: 40px; */
+    border: 1px solid black;
+    padding: 14px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    left: 80%;
+    top: 65%;
+}
+.active-player{
+    /* background-color: black; */
+    height: 40px;
+    padding: 14px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+        left: 80%;
+    /* 
+    top: 65%; */
+}
+
+/***************button functions****************/
+#dice:disabled{
+    opacity: 0.5;
+}
